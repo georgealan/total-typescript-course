@@ -1,5 +1,8 @@
 import { Equal, Expect } from "../helpers/type-utils";
-
+/* 
+How can we extract the type parameters of that const below?
+For that we use Parameters<>
+*/
 const makeQuery = (
   url: string,
   opts?: {
@@ -11,7 +14,9 @@ const makeQuery = (
   },
 ) => {};
 
-type MakeQueryParameters = unknown;
+type MakeQueryParameters = Parameters<typeof makeQuery>; // Obtain the parameters of a function type in a tuple
+// If you want extract the other parameters inside the object you can use this:
+type MakeQueryParametersSecondArgument = MakeQueryParameters[1]; // Obtain the parameters of a function type in a tuple
 
 type tests = [
   Expect<
