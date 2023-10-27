@@ -1,7 +1,7 @@
 import { expect, it } from "vitest";
 
 const createCache = () => {
-  const cache: Record<string, string> = {};
+  const cache: Record<string, string> = {}; // This structure Record means that this object can contain any sort of keys
 
   const add = (id: string, value: string) => {
     cache[id] = value;

@@ -1,6 +1,8 @@
 import { expect, it } from "vitest";
 
-export const addTwoNumbers = (a, b) => {
+// Here only need to explicitly infer type to those function parameters
+// If don't, TS will throw erros complaining about the lack of type information, be aware of that.
+export const addTwoNumbers = (a: number, b: number) => {
   return a + b;
 };
 

@@ -1,8 +1,14 @@
-import { expect, it } from "vitest";
+import { expect, it } from "vitest"
 
-export const addTwoNumbers = (params) => {
-  return params.first + params.second;
-};
+// Here we can use type or interface too.
+type ParamsArg = {
+  first: number
+  second: number
+}
+
+export const addTwoNumbers = (params: ParamsArg) => {
+  return params.first + params.second
+}
 
 it("Should add the two numbers together", () => {
   expect(
@@ -10,12 +16,12 @@ it("Should add the two numbers together", () => {
       first: 2,
       second: 4,
     }),
-  ).toEqual(6);
+  ).toEqual(6)
 
   expect(
     addTwoNumbers({
       first: 10,
       second: 20,
     }),
-  ).toEqual(30);
+  ).toEqual(30)
 });
