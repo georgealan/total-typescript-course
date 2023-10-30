@@ -8,6 +8,7 @@
  * Which is which?
  */
 
+// This is a discriminated union
 type A =
   | {
       type: "a";
@@ -22,8 +23,15 @@ type A =
       c: string;
     };
 
-type B = "a" | "b" | "c";
+const getUnion = (result: A) => {
+  if(result.type === 'a') {
+    result.a
+  }
+}
 
+type B = "a" | "b" | "c"; // This is a union.
+
+// This is an enum
 enum C {
   A = "a",
   B = "b",

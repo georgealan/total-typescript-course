@@ -1,4 +1,4 @@
-type Route = unknown;
+type Route = `/${string}`; // This sign `` are the template literals
 
 export const goToRoute = (route: Route) => {};
 

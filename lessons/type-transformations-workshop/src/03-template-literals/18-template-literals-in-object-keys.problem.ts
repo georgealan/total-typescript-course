@@ -2,7 +2,8 @@ import { Equal, Expect } from "../helpers/type-utils";
 
 type TemplateLiteralKey = `${"user" | "post" | "comment"}${"Id" | "Name"}`;
 
-type ObjectOfKeys = unknown;
+// Construct a type with a set of properties K of type T <K, T>
+type ObjectOfKeys = Record<TemplateLiteralKey, string>;
 
 type tests = [
   Expect<

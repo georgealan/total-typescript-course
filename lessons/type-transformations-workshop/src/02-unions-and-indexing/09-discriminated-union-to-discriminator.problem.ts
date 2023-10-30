@@ -14,6 +14,7 @@ export type Event =
       event: KeyboardEvent;
     };
 
-type EventType = unknown;
+// You can acesse pieces of them as long they belong on each member of the union.
+type EventType = Event['type'];
 
 type tests = [Expect<Equal<EventType, "click" | "focus" | "keydown">>];

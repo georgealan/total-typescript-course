@@ -4,7 +4,9 @@ type BreadType = "rye" | "brown" | "white";
 
 type Filling = "cheese" | "ham" | "salami";
 
-type Sandwich = unknown;
+// Other way to capture all occurrences in one catch with literals.
+// This is similar to regex expressions. But it have a limit taht you can reach.
+type Sandwich = `${BreadType} sandwich with ${Filling}`;
 
 type tests = [
   Expect<

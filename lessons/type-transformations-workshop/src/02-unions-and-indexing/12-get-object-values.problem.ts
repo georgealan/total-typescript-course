@@ -1,3 +1,4 @@
+import { type } from "os";
 import { Equal, Expect } from "../helpers/type-utils";
 
 const frontendToBackendEnumMap = {
@@ -6,7 +7,11 @@ const frontendToBackendEnumMap = {
   sharedModule: "SHARED_MODULE",
 } as const;
 
-type BackendModuleEnum = unknown;
+type BackendModuleEnum = typeof frontendToBackendEnumMap[keyof typeof frontendToBackendEnumMap];
+
+// Or this another solution
+type Obj = typeof frontendToBackendEnumMap
+type BackendModuleEnum2 = Obj[keyof Obj]
 
 type tests = [
   Expect<

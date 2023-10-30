@@ -14,7 +14,8 @@ export type Event =
       event: KeyboardEvent;
     };
 
-type NonKeyDownEvents = unknown;
+// Exclude from T those types that are assignable to U <T, U>
+type NonKeyDownEvents = Exclude<Event, { type: 'keydown' }>;
 
 type tests = [
   Expect<
